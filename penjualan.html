@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+            background-color:white;
+		}
+		header {
+            text-align: center;
+			background-color: rgb(255, 32, 158);
+			color: #fff;
+			padding: 10px;
+		}
+
+		footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+			background-color: rgb(255, 32, 158);
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+        main {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            margin-top: 160px;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Menu Utama Ujian 1 P.web</h1>
+	</header>
+			<a href="index.html">Menu Utama</a><br>
+			<a href="penjualan.html">Penjualan</a><br>
+			<a href="tentang.html">Tentang Saya</a>
+	<main>
+        <h1>Form Penjualan</h1>
+        <form action="" method="post">
+            <label for="nama_barang">Nama Barang:</label>
+            <input type="text" id="nama_barang" name="nama_barang" required><br>
+    
+            <label for="harga_barang">Harga Barang:</label>
+            <input type="number" id="harga_barang" name="harga_barang" required><br>
+    
+            <label for="jumlah_barang">Jumlah Barang:</label>
+            <input type="number" id="jumlah_barang" name="jumlah_barang" required><br>
+    
+            <input type="button" value="Hitung" onclick="hitungTotalBayar()">
+        </form>
+    
+        <div id="output"></div>
+    
+        <script>
+            function hitungTotalBayar() {
+                var namaBarang = document.getElementById("nama_barang").value;
+                var hargaBarang = document.getElementById("harga_barang").value;
+                var jumlahBarang = document.getElementById("jumlah_barang").value;
+                var totalBayar = hargaBarang * jumlahBarang;
+    
+                var output = document.getElementById("output");
+                output.innerHTML = "<h2>Detail Penjualan:</h2>" + 
+                    "<p>Nama Barang: " + namaBarang + "</p>" +
+                    "<p>Harga Barang: " + hargaBarang + "</p>" +
+                    "<p>Jumlah Barang: " + jumlahBarang + "</p>" +
+                    "<p>Total Bayar: " + totalBayar + "</p>";
+            }
+        </script>
+	</main>
+	<footer>
+		<p>20101106007 - Fitria Ilwa Minabari - A</p>
+	</footer>
+</body>
+</html>
